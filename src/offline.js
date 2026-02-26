@@ -374,9 +374,12 @@ Runner.prototype = {
     const darkModeMediaQuery =
       window.matchMedia('(prefers-color-scheme: dark)');
     this.isDarkMode = darkModeMediaQuery && darkModeMediaQuery.matches;
-    darkModeMediaQuery.addListener((e) => {
+    darkModeMediaQuery.addEventListener('change', (e) => {
       this.isDarkMode = e.matches;
     });
+    // darkModeMediaQuery.addListener((e) => {
+    //   this.isDarkMode = e.matches;
+    // });
   },
 
   /**
@@ -548,7 +551,8 @@ Runner.prototype = {
       if (this.playingIntro) {
         this.horizon.update(0, this.currentSpeed, hasObstacles);
       } else {
-        const showNightMode = this.isDarkMode ^ this.inverted;
+        // const showNightMode = this.isDarkMode ^ this.inverted;
+        const showNightMode = this.isDarkMode !== this.inverted;
         deltaTime = !this.activated ? 0 : deltaTime;
         this.horizon.update(
           deltaTime, this.currentSpeed, hasObstacles, showNightMode);

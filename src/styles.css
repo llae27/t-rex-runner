@@ -2,7 +2,7 @@
 /* Copyright 2017 The Chromium Authors. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file. */
- 
+
 body {
   --background-color: #fff;
   --error-code-color: var(--google-gray-700);
@@ -20,7 +20,7 @@ body {
   --google-gray-900: rgb(32, 33, 36);
   --heading-color: var(--google-gray-900);
   --link-color: rgb(88, 88, 88);
-  --popup-container-background-color: rgba(0,0,0,.65);
+  --popup-container-background-color: rgba(0, 0, 0, .65);
   --primary-button-fill-color-active: var(--google-blue-700);
   --primary-button-fill-color: var(--google-blue-600);
   --primary-button-text-color: #fff;
@@ -47,6 +47,15 @@ html {
   font-size: 125%;
 }
 
+html.inverted {
+  background-color: #fff;
+  filter: invert(1);
+}
+
+html.inverted body {
+  background-color: #fff;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     --background-color: var(--google-gray-900);
@@ -63,6 +72,19 @@ html {
     --secondary-button-text-color: var(--google-blue-300);
     --small-link-color: var(--google-blue-300);
     --text-color: var(--google-gray-500);
+  }
+
+  html.inverted {
+    background-color: var(--background-color);
+    filter: invert(0);
+  }
+
+  html.inverted body {
+    background-color: #fff;
+  }
+
+  html.inverted .offline-runner-live-region {
+    color: #fff;
   }
 }
 
@@ -92,10 +114,8 @@ html {
   }
 }
 
-@media (min-width: 240px) and (max-width: 420px) and
-       (min-height: 401px),
-       (min-width: 421px) and (min-height: 240px) and
-       (max-height: 560px) {
+@media (min-width: 240px) and (max-width: 420px) and (min-height: 401px),
+(min-width: 421px) and (min-height: 240px) and (max-height: 560px) {
   body {
     background: var(--background-color);
     bottom: 0;
@@ -117,7 +137,7 @@ html {
 }
 
 @media (max-width: 420px) and (orientation: portrait),
-       (max-height: 560px) {
+(max-height: 560px) {
   body {
     margin: 0 auto;
   }
@@ -154,8 +174,7 @@ html {
   }
 }
 
-@media (min-height: 500px) and (max-height: 650px) and (max-width: 414px) and
-       (orientation: portrait) {
+@media (min-height: 500px) and (max-height: 650px) and (max-width: 414px) and (orientation: portrait) {
   .interstitial-wrapper {
     margin-top: 7vh;
   }
@@ -169,8 +188,8 @@ html {
 
 /* Small mobile screens. No fixed nav. */
 @media (max-height: 400px) and (orientation: portrait),
-       (max-height: 239px) and (orientation: landscape),
-       (max-width: 419px) and (max-height: 399px) {
+(max-height: 239px) and (orientation: landscape),
+(max-width: 419px) and (max-height: 399px) {
   .interstitial-wrapper {
     display: flex;
     flex-direction: column;
@@ -182,8 +201,8 @@ html {
 /* Copyright 2013 The Chromium Authors. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file. */
- 
- #offline-resources {
+
+#offline-resources {
   display: none;
 }
 
@@ -223,9 +242,9 @@ html {
     opacity: 1;
     transform: translateY(0);
   }
+
   100% {
     opacity: 0;
     transform: translateY(90px);
   }
 }
-

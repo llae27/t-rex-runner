@@ -58,7 +58,7 @@ html.inverted body {
 
 @media (prefers-color-scheme: dark) {
   body {
-    --background-color: var(--google-gray-900);
+    --background-color: var(--google-gray-300);
     --error-code-color: var(--google-gray-500);
     --heading-color: var(--google-gray-500);
     --link-color: var(--google-blue-300);
@@ -72,6 +72,10 @@ html.inverted body {
     --secondary-button-text-color: var(--google-blue-300);
     --small-link-color: var(--google-blue-300);
     --text-color: var(--google-gray-500);
+  }
+
+  html {
+    filter: invert(1);
   }
 
   html.inverted {

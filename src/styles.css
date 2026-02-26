@@ -43,6 +43,8 @@ body {
 
 
 html {
+  transition: filter 1.5s cubic-bezier(0.65, 0.05, 0.36, 1), background-color 1.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  will-change: filter, background-color;
   -webkit-text-size-adjust: 100%;
   font-size: 125%;
 }
@@ -72,11 +74,6 @@ html.inverted body {
     --secondary-button-text-color: var(--google-blue-300);
     --small-link-color: var(--google-blue-300);
     --text-color: var(--google-gray-500);
-  }
-
-  html {
-    transition: filter 1.5s cubic-bezier(0.65, 0.05, 0.36, 1), background-color 1.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-    will-change: filter, background-color;
   }
 
   html .runner-canvas {
